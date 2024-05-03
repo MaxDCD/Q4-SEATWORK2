@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+
+    <title> LEC Calculator!</title>
+    <style>
+
+        body {
+            background-color: #fbc549;
+        }
+
+        .header {
+            border-radius: 70px;
+            background-color: white;
+            padding: 20px;
+            width: 20%;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        .container-fluid {
+            border-radius: 20px;
+            background-color: white;
+            float: right;
+            margin: 10px;
+            width: 1000px;
+            padding: 40px;
+            position: relative;
+        }
+
+        .container-fluid-1 {
+            margin: 10px;
+            position: relative;
+            margin-left: 650px;
+
+
+        }
+
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+        }
+
+
+        #leclerc {
+            border-style: dashed;
+            border-color: #583424;
+            border-width: 10px;
+            border-radius: 10px;
+            background-color: white;
+            margin: 10px;
+            float: left;
+
+        }
+
+        button {
+            margin: 5px;
+            width: 300px;
+        }
+
+        h1 {
+            font-family: "Bebas Neue", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 70px;
+            color: black;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+<br>
+    <div class="header">
+        <a href="https://lec.it"><img src="https://lec.it/wp-content/uploads/2024/03/logo-lec-brown.svg" class="center" alt="logo" width="200px"></a>
+    </div>
+
+        
+
+        <div class="w3-content w3-section" style="max-width:500px">
+            <img src="https://i.pinimg.com/736x/91/8d/56/918d56b947c518f86c8ae7aadc8a65df.jpg" class="icecream" id="leclerc" alt="icecream" width="400">
+            <img src="https://i.pinimg.com/736x/b9/f9/2a/b9f92abf2a43e01b54b7eba972dedec5.jpg" class="icecream" id="leclerc" alt="icecream" width="400">
+            <img src="https://i.pinimg.com/736x/9b/f1/0f/9bf10f93828313dfbd40da78907362d0.jpg" class="icecream" id="leclerc" alt="icecream" width="400">
+            <img src="https://i.pinimg.com/736x/76/e0/71/76e071ff1d9cdbdf70e3f84e2bb738b6.jpg" class="icecream" id="leclerc" alt="icecream" width="400">
+
+        </div>
+
+        <script>
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+          var i;
+          var x = document.getElementsByClassName("icecream");
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+          }
+          myIndex++;
+          if (myIndex > x.length) {myIndex = 1}    
+          x[myIndex-1].style.display = "block";  
+          setTimeout(carousel, 3000);
+        }
+        </script>
+
+
+
+<br>
+<br>
+<br>
+<br>
+
+<div class="container-fluid">
+    <div id="calculator">
+
+        <h1> Welcome to <font color="#fbc549">LEC</font>!</h1>
+        <p><strong><a href="https://www.charlesleclerc.com/?lang=fr">Charles Leclerc</a></strong> just opened his ice cream shop and he needs your help in calculating his sales! Create your own price, how many tubs bought, and much more! </p>
+
+            <form>
+                <input placeholder="Ice Cream Price" class="form-control" type="calculator" id="x">
+
+                <br>
+                
+                <input placeholder="Amount of Tubs Sold" class="form-control" type="calculator" id="y">
+
+                
+
+            </form>
+            
+        <br>
+
+        <p>Done inputing your values? Start calculating by clicking either of the four buttons!</p>
+    
+    </div>
+</div>
+
+            <div class="container-fluid-1">
+                <br>
+                    <button class="btn btn-light" onclick="product()">x • y</button>
+                    <button class="btn btn-dark" onclick="quotient()">x ÷ y</button>
+                        
+                    <br>
+
+                    <button class="btn btn-dark" onclick="sum()">x + y</button>
+                    <button class="btn btn-light" onclick="difference()">x - y</button>
+
+
+                <script>
+
+                    function product() {
+
+                        let x = parseFloat(document.getElementById('x').value);
+                        let y = parseFloat(document.getElementById('y').value);
+                        alert(x + " times " + y + " is " + (x * y));
+                        
+                        }
+
+
+                    function quotient() {
+
+                        let x = parseFloat(document.getElementById('x').value);
+                        let y = parseFloat(document.getElementById('y').value);
+                        alert(x + " divided to " + y + " is " + (x / y));
+
+                        }
+
+
+                    function sum() {
+
+                        let x = parseFloat(document.getElementById('x').value);
+                        let y = parseFloat(document.getElementById('y').value);
+                        alert("the sum of " + x + " and " + y + " is " + (x + y));
+                        }
+
+
+                    function difference() {
+
+                        let x = parseFloat(document.getElementById('x').value);
+                        let y = parseFloat(document.getElementById('y').value);
+                        alert("the difference of " + x + " and " + y + " is " + (x - y));
+                        }
+
+                    </script>
+            </div>
+
+</body>
+</html>
